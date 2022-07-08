@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Dash</title>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <h1>Weather Dashboard</h1>
+        </header>
+        <main>
+            <div class="search-col">
+                <form class="search-box">
+                    <h2>Search for a City</h2>
+                    <textarea placeholder="Enter City Name"></textarea>
+                    <button type="submit">Search</button>
+                </form>
+                <div class="search-history">
+
+                </div>
+            </div>
+            <div class="result-col">
+                <div id="weather-today">
+                    <h3 id="result-title"></h3> 
+                    <p id="result-temp"></p>
+                    <p id="result-wind"></p>
+                    <p id="result-humidity"></p>
+                    <p id="result-UV"></p>
+                </div>
+                <div id="five-day-box">
+                    <h4 id="five-day-title"></h4>
+                    <div id="five-day-forecast">
+                        <div id="one-day">
+                            <div id="one-date"></div>
+                            <div id="one-icon"></div>
+                            <div id="one-temp"></div>
+                            <div id="one-wind"></div>
+                            <div id="one-humidity"></div>
+                        </div>
+                        <div id="two-day">
+                            <div id="two-date"></div>
+                            <div id="two-icon"></div>
+                            <div id="two-temp"></div>
+                            <div id="two-wind"></div>
+                            <div id="two-humidity"></div>
+                        </div>
+                        <div id="three-day">
+                            <div id="three-date"></div>
+                            <div id="three-icon"></div>
+                            <div id="three-temp"></div>
+                            <div id="three-wind"></div>
+                            <div id="three-humidity"></div>
+                        </div>
+                        <div id="four-day">
+                            <div id="four-date"></div>
+                            <div id="four-icon"></div>
+                            <div id="four-temp"></div>
+                            <div id="four-wind"></div>
+                            <div id="four-humidity"></div>
+                        </div>
+                        <div id="five-day">
+                            <div id="five-date"></div>
+                            <div id="five-icon"></div>
+                            <div id="five-temp"></div>
+                            <div id="five-wind"></div>
+                            <div id="five-humidity"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
