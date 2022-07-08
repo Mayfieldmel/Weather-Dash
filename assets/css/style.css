@@ -54,10 +54,8 @@ textarea {
     height: 40%;
 }
 
-.search-btn {
+.search-box .btn {
     background-color: rgba(33, 130, 241, 0.8);
-    border: none;
-    border-radius: 3px;
     color: white;
     height: 40%;
 }
@@ -82,13 +80,48 @@ textarea {
     margin: 10px;
 }
 
-#weather-today {
+.today-box {
+    display: flex;
+    flex-direction: column;
     border: 1px black solid;
     height: 40%;
 }
 
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
 
-#five-day-box {
+ .future-box {
+    display: flex;
+    flex-direction: column;
     border: 1px black solid;
     height: 60%;
 }
+
+h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.future-cards {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.forecast-card {
+   display: flex;
+   flex-direction: column;
+}
+
+.forecast-card p {
+    color: white;
+}
+
