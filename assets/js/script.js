@@ -10,17 +10,12 @@ var todayIconEl = document.querySelector("#today-icon");
 var resultTitleEl = document.querySelector("#result-title");
 var resultTempEl = document.querySelector("#result-temp");
 var resultWindEl = document.querySelector("#result-wind");
-var resultHumidityEl = document.querySelector("result-humidity");
+var resultHumidEl = document.querySelector("#result-humidity");
 var resultUVEl = document.querySelector("#result-UV");
 var uvIndexEl = document.querySelector("#UV-Index");
 // five-day forecast variables
 var fiveDayTitleEl = document.querySelector("#five-day-title");
 var fiveDayForecastEl = document.querySelector("#five-day-forecast");
-// var dayOne = document.querySelector("#one-day");
-// var dayTwo = document.querySelector("#two-day");
-// var dayThree = document.querySelector("#three-day");
-// var dayFour = document.querySelector("#four-day");
-// var dayFive = document.querySelector("#five-day");
 
 
 
@@ -40,8 +35,8 @@ var displayCityData = function(data) {
     // display current weather
     resultTempEl.textContent = "Temp: " + data["current"]["temp"] + " °F";
     resultWindEl.textContent = "Wind: " + data["current"]["wind_speed"] + " MPH";
-    // resultHumidityEl.textContent = "Humidity: " + data["current"]["humidity"] + " %";
-    resultUVEl.textContent = "UV Index: " ;
+    resultHumidEl.textContent = "Humidity: " + data["current"]["humidity"] + " %";
+    resultUVEl.textContent = "UV Index: ";
     uvIndexEl.textContent = data["current"]["uvi"];
         var uvIndex = parseInt(uvIndexEl.textContent);
         // index background color based on status
@@ -101,8 +96,6 @@ var displayCityData = function(data) {
             humidity.textContent = "Humidity: " + fiveDays[i]["humidity"] + " %";
             day.appendChild(humidity);
     }
-    
-    
 }  
 
 
@@ -125,7 +118,14 @@ var searchCity = function() {
     event.preventDefault();
     cityName = cityNameEl.value.trim().toLowerCase();
     console.log(cityName);
-
+    var geocodeUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=f92fdda14af7b15ad0ec974e795f4725";
+    fetch(geocodeUrl).then(function(response) {
+        if(response.ok) {
+            response.json().then(function(data) {
+                console.log(data);
+            })
+        }
+    })
     getCityData(40.7128, 74.0060);
 }
 
