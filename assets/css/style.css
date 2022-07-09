@@ -91,7 +91,7 @@ textarea {
     display: flex;
     flex-direction: column;
     border: 1px black solid;
-    height: 40%;
+    height: auto;
 }
 
 .today-header {
@@ -101,8 +101,8 @@ textarea {
 .icon-box {
     height: 40px;
     width: 40px;
-    position: relative;
-    top: -8px;   
+    /* position: relative;
+    top: 0px;    */
 }
 
 .image {
@@ -119,6 +119,7 @@ h3 {
     font-size: 20px;
     font-weight: bold;
     text-transform: capitalize;
+    padding: 10px 0 0px 5px
 }
 
 /* future weather */
@@ -156,4 +157,65 @@ h5 {
 
 p { 
     padding: 10px 5px;
+}
+
+/* index colors */
+.low {
+    background-color: green;
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    border-radius: 3px;
+    position: relative;
+    bottom: -10px;
+    text-align: center;
+    color: white;
+}
+
+.moderate {
+    background-color: yellow;
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    border-radius: 3px;
+    position: relative;
+    bottom: -10px;
+    text-align: center;
+    color: white;
+}
+
+.high {
+    background-color: orange;
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    border-radius: 3px;
+    position: relative;
+    bottom: -10px;
+    text-align: center;
+    color: white;
+}
+
+.very-high {
+    background-color: red;
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    border-radius: 3px;
+    position: relative;
+    bottom: -10px;
+    text-align: center;
+    color: white;
+}
+
+.extreme {
+    background-color: violet;
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    border-radius: 3px;
+    position: relative;
+    bottom: -10px;
+    text-align: center;
+    color: white;
 }
