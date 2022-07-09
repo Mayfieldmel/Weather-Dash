@@ -4,12 +4,14 @@
     font-family: Helvetica, Arial, sans-serif
 }
 
+/* entire page */
 .page-container {
     display: flex;
     flex-direction: column;
     margin: 10px 5px;
 }
 
+/* page header */
 header {
     width: 100%;
     background-image: linear-gradient(to right, rgb(28, 93, 168), rgb(29, 35, 71));
@@ -22,11 +24,12 @@ h1 {
     padding-top: 5px;
 }
 
+/* page content */
 main {
     display: flex;
-    /* border: 1px black solid; */
 }
 
+/* search column/left side of page */
 .search-col {
     display: flex;
     flex-direction: column;
@@ -34,6 +37,7 @@ main {
     flex: 1 25%;
 }
 
+/* search flexbox */
 .search-box {
     display: flex;
     flex-direction: column;
@@ -60,6 +64,7 @@ textarea {
     height: 40%;
 }
 
+/* history flexbox */
 .search-history {
     display: flex;
     flex-direction: column;
@@ -71,15 +76,17 @@ textarea {
     border-radius: 3px;
     margin-bottom: 10px;
 }
+/* end of search column */
 
+/* result column/right side of page */
 .result-col {
     display: flex;
     flex-direction: column;
     flex: 4 75%;
-    border: 1px black solid;
     margin: 10px;
 }
 
+/* today's weather */
 .today-box {
     display: flex;
     flex-direction: column;
@@ -92,10 +99,10 @@ h3 {
     font-weight: bold;
 }
 
+/* future weather */
  .future-box {
     display: flex;
     flex-direction: column;
-    border: 1px black solid;
     height: 60%;
 }
 
@@ -107,7 +114,6 @@ h4 {
 .future-cards {
     display: flex;
     justify-content: space-around;
-
 }
 
 h5 {
@@ -124,4 +130,4 @@ h5 {
 .forecast-card p {
     color: white;
 }
-
+/* end of result column */

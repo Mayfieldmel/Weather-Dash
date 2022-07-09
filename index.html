@@ -8,11 +8,15 @@
     <title>Weather Dash</title>
 </head>
 <body>
+    <!-- page flexbox -->
     <div class="page-container">
+        <!-- page header -->
         <header>
             <h1>Weather Dashboard</h1>
         </header>
+        <!-- page content -->
         <main>
+            <!-- left side of page/search column -->
             <div class="search-col">
                 <form class="search-box">
                     <h2>Search for a City:</h2>
@@ -23,14 +27,18 @@
 
                 </div>
             </div>
+            <!-- right side of pag/ results column -->
             <div class="result-col">
-                <div id="weather-today" class="today-box">
+                <!-- today's weather -->
+                <!-- add today-box class dynamically -->
+                <div id="weather-today">
                     <h3 id="result-title"></h3> 
                     <p id="result-temp"></p>
                     <p id="result-wind"></p>
                     <p id="result-humidity"></p>
                     <p id="result-UV"></p>
                 </div>
+                <!-- five day forecast -->
                 <div id="five-day-box" class="future-box">
                     <h4 id="five-day-title"></h4>
                     <div id="five-day-forecast" class="future-cards">
@@ -69,6 +77,7 @@
                             <p id="five-wind"></p>
                             <p id="five-humidity"></p>
                         </div>
+                    <!-- end of five-day forecast -->
                     </div>
                 </div>
             </div>
