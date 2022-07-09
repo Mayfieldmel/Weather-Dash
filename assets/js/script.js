@@ -78,9 +78,11 @@ var displayCityData = function(data) {
             day.classList = "forecast-card";
             day.textContent = "day";
             fiveDayForecastEl.appendChild(day);
+            //card title 
         var date = document.createElement("h5");
             date.textContent = moment().add((i + 1), 'day').format("L");
             day.appendChild(date);
+            // card icon
         var fiveDayIconBox = document.createElement("span");
             fiveDayIconBox.classList = "icon-box";
             day.appendChild(fiveDayIconBox);
@@ -89,6 +91,15 @@ var displayCityData = function(data) {
             fiveDayIconBox.appendChild(fiveDayIcon);
             var icon5 = fiveDays[i]["weather"][0].icon;
             fiveDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + icon5 + "@2x.png");
+        var temp = document.createElement("p");
+            temp.textContent = "Temp: " + fiveDays[i]["temp"]["day"] + " °F";
+            day.appendChild(temp);
+        var wind = document.createElement("p");
+            wind.textContent = "Wind: " + fiveDays[i]["wind_speed"] + " MPH";
+            day.appendChild(wind);
+        var humidity = document.createElement("p");
+            humidity.textContent = "Humidity: " + fiveDays[i]["humidity"] + " %";
+            day.appendChild(humidity);
     }
     
     
