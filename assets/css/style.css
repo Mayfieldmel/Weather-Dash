@@ -132,6 +132,7 @@ h3 {
 h4 {
     font-size: 18px;
     font-weight: bold;
+    padding: 15px 0 5px 0;
 }
 
 .future-cards {
@@ -148,6 +149,8 @@ h5 {
 .forecast-card {
    display: flex;
    flex-direction: column;
+   background-color: rgb(23, 43, 61);
+   padding: 0 10px;
 }
 
 .forecast-card p {
