@@ -94,9 +94,31 @@ textarea {
     height: 40%;
 }
 
+.today-header {
+    display: flex;
+}
+
+.icon-box {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    top: -8px;   
+}
+
+.image {
+    display: none;
+}
+
+.icon {
+    display: inline;
+    width: 100%;
+    height: 100%;
+}
+
 h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 /* future weather */
@@ -107,7 +129,7 @@ h3 {
 }
 
 h4 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -117,7 +139,7 @@ h4 {
 }
 
 h5 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: white;
 }
@@ -131,3 +153,7 @@ h5 {
     color: white;
 }
 /* end of result column */
+
+p { 
+    padding: 10px 5px;
+}

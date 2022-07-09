@@ -32,7 +32,12 @@
                 <!-- today's weather -->
                 <!-- add today-box class dynamically -->
                 <div id="weather-today">
-                    <h3 id="result-title"></h3> 
+                    <div id="current-header" class="today-header">
+                        <h3 id="result-title"></h3> 
+                        <span class="icon-box">
+                            <img id="today-icon" class="image"></img>
+                        </span>
+                    </div>
                     <p id="result-temp"></p>
                     <p id="result-wind"></p>
                     <p id="result-humidity"></p>
@@ -44,35 +49,35 @@
                     <div id="five-day-forecast" class="future-cards">
                         <div class="forecast-card" id="one-day">
                             <h5 id="one-date"></h5>
-                            <p id="one-icon"></p>
+                            <img id="one-icon"></img>
                             <p id="one-temp"></p>
                             <p id="one-wind"></p>
                             <p id="one-humidity"></p>
                         </div>
                         <div class="forecast-card" id="two-day">
                             <h5 id="two-date"></h5>
-                            <p id="two-icon"></p>
+                            <img id="two-icon"></img>
                             <p id="two-temp"></p>
                             <p id="two-wind"></p>
                             <p id="two-humidity"></p>
                         </div>
                         <div class="forecast-card" id="three-day">
                             <h5 id="three-date"></h5>
-                            <p id="three-icon"></p>
+                            <img id="three-icon"></img>
                             <p id="three-temp"></p>
                             <p id="three-wind"></p>
                             <p id="three-humidity"></p>
                         </div>
                         <div class="forecast-card" id="four-day">
                             <h5 id="four-date"></h5>
-                            <p id="four-icon"></p>
+                            <img id="four-icon"></img>
                             <p id="four-temp"></p>
                             <p id="four-wind"></p>
                             <p id="four-humidity"></p>
                         </div>
                         <div class="forecast-card" id="five-day">
                             <h5 id="five-date"></h5>
-                            <p id="five-icon"></p>
+                            <img id="five-icon"></img>
                             <p id="five-temp"></p>
                             <p id="five-wind"></p>
                             <p id="five-humidity"></p>
@@ -83,6 +88,7 @@
             </div>
         </main>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
