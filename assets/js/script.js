@@ -55,8 +55,9 @@ var displayCityData = function(data) {
         }
 
     // 5-day forecast title
-    fiveDayTitleEl.textContent = "5-Day Forecast:"
-
+    fiveDayTitleEl.textContent = "5-Day Forecast:";
+    // clear 5-day content
+    fiveDayForecastEl.innerHTML = "";
 // display 5-day forecast data  
     // 5-day array
     var fiveDays = [
@@ -98,11 +99,8 @@ var displayCityData = function(data) {
     }
 }  
 
-
-
-
-
-  var getCityData = function(lat, long) {
+// fetch city data
+var getCityData = function(lat, long) {
     var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&exclude=minutely,hourly,alerts&units=imperial&appid=f92fdda14af7b15ad0ec974e795f4725";
     fetch(apiUrl).then(function(response) {
         if(response.ok) {
@@ -114,6 +112,31 @@ var displayCityData = function(data) {
     });
 };
 
+// save search button
+var saveSearch = function(cityName) {
+    var searchHistoryBtn = document.createElement("button");
+    searchHistoryBtn.textContent = cityName;
+    searchHistoryEl.appendChild(searchHistoryBtn);
+}
+
+var getHistoryData = function() {
+    console.log(event.target.textContent)
+    cityName = event.target.textContent
+    var geocodeUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=f92fdda14af7b15ad0ec974e795f4725";
+    fetch(geocodeUrl).then(function(response) {
+        if(response.ok) {
+            response.json().then(function(data) {
+                console.log(data)
+                getCityData(data[0]["lat"], data[0]["lon"]);
+            })
+        } 
+    })
+    .catch(function (error) {
+        alert('Unable to connect to GitHub');
+      });
+}
+
+// search by user input
 var searchCity = function() {
     event.preventDefault();
     cityName = cityNameEl.value.trim().toLowerCase();
@@ -124,14 +147,19 @@ var searchCity = function() {
             response.json().then(function(data) {
                 console.log(data)
                 getCityData(data[0]["lat"], data[0]["lon"]);
+                saveSearch(cityName);
             })
-        }
+        } else {
+            alert('Error: ' + response.statusText);
+          }
     })
-   
+    .catch(function (error) {
+        alert('Unable to connect to GitHub');
+      });
 }
 
 
 
 
-
+searchHistoryEl.addEventListener("click", getHistoryData)
 searchBoxEl.addEventListener("submit", searchCity);
