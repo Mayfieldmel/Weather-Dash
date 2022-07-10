@@ -122,11 +122,12 @@ var searchCity = function() {
     fetch(geocodeUrl).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                console.log(data);
+                console.log(data)
+                getCityData(data[0]["lat"], data[0]["lon"]);
             })
         }
     })
-    getCityData(40.7128, 74.0060);
+   
 }
 
 
