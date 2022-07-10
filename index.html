@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Dash</title>
+</head>
+<body>
+    <!-- page flexbox -->
+    <div class="page-container">
+        <!-- page header -->
+        <header>
+            <h1>Weather Dashboard</h1>
+        </header>
+        <!-- page content -->
+        <main>
+            <!-- left side of page/search column -->
+            <div class="search-col">
+                <form class="search-box">
+                    <h2>Search for a City:</h2>
+                    <textarea placeholder="Enter City Name"></textarea>
+                    <button type="submit" id="search" class="btn">Search</button>
+                </form>
+                <div class="search-history"></div>
+            </div>
+            <!-- right side of pag/ results column -->
+            <div class="result-col">
+                <!-- today's weather -->
+                <div id="weather-today">
+                    <div id="current-header" class="today-header">
+                        <h3 id="result-title"></h3> 
+                        <span class="icon-box">
+                            <img id="today-icon"></img>
+                        </span>
+                    </div>
+                    <p id="result-temp"></p>
+                    <p id="result-wind"></p>
+                    <p id="result-humidity"></p>
+                    <div id="UV-box" class="today-header">
+                        <p id="result-UV"></p>
+                        <span id="UV-Index" class="index-box"></span>
+                    </div>
+        
+                </div>
+                <!-- five day forecast -->
+                <div id="five-day-box" class="future-box">
+                    <h4 id="five-day-title"></h4>
+                    <div id="five-day-forecast" class="future-cards"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
