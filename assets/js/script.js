@@ -16,10 +16,24 @@ var uvIndexEl = document.querySelector("#UV-Index");
 // five-day forecast variables
 var fiveDayTitleEl = document.querySelector("#five-day-title");
 var fiveDayForecastEl = document.querySelector("#five-day-forecast");
+// array of past searches
+var cityHistoryArr = [];
 
+// display search history
+var displaySavedBtns = function() {
+    var cityHistoryStr = localStorage.getItem("city");
+    cityHistoryArr = cityHistoryStr.split(",");
+    console.log(cityHistoryArr);
+    for (let i = 0; i < cityHistoryArr.length; i++) {
+        var searchHistoryBtn = document.createElement("button");
+        searchHistoryBtn.textContent = cityHistoryArr[i];
+        searchHistoryEl.appendChild(searchHistoryBtn);
+        
+    }
 
+}
 
-
+// display fetched data
 var displayCityData = function(data) {
 // display current weather data
     // display weather data box
@@ -117,8 +131,13 @@ var saveSearch = function(cityName) {
     var searchHistoryBtn = document.createElement("button");
     searchHistoryBtn.textContent = cityName;
     searchHistoryEl.appendChild(searchHistoryBtn);
+    localStorage.getItem("city");
+    cityHistoryArr.push(cityName);
+    console.log(cityHistoryArr);
+    localStorage.setItem("city", cityHistoryArr);
 }
 
+// fetch data for saved city
 var getHistoryData = function() {
     console.log(event.target.textContent)
     cityName = event.target.textContent
@@ -160,6 +179,6 @@ var searchCity = function() {
 
 
 
-
-searchHistoryEl.addEventListener("click", getHistoryData)
+document.addEventListener("DOMContentLoaded", displaySavedBtns);
+searchHistoryEl.addEventListener("click", getHistoryData);
 searchBoxEl.addEventListener("submit", searchCity);
