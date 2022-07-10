@@ -51,7 +51,7 @@ main {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 28px;
 }
 
 textarea {
@@ -76,9 +76,10 @@ textarea {
 
 .btn {
     border: none;
-    background-color: grey;
+    background-color: rgb(163, 162, 162);
     border-radius: 3px;
     margin-bottom: 10px;
+    text-transform: capitalize;
 }
 /* end of search column */
 
@@ -114,10 +115,6 @@ h3 {
     width: 40px;
     /* position: relative;
     top: 0px;    */
-}
-
-.image {
-    display: none;
 }
 
 .icon {
@@ -188,6 +185,7 @@ h5 {
     bottom: -10px;
     text-align: center;
     color: white;
+    text-shadow: 1px 1px 2px black;
 }
 
 .high {
@@ -200,6 +198,8 @@ h5 {
     bottom: -10px;
     text-align: center;
     color: white;
+     text-transform: capitalize;
+     
 }
 
 .very-high {

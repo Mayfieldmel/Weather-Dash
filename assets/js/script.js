@@ -22,24 +22,32 @@ var cityHistoryArr = [];
 // display search history
 var displaySavedBtns = function() {
     var cityHistoryStr = localStorage.getItem("city");
-    cityHistoryArr = cityHistoryStr.split(",");
-    console.log(cityHistoryArr);
-    // display btn for each saved search
-    for (let i = 0; i < cityHistoryArr.length; i++) {
-        var searchHistoryBtn = document.createElement("button");
-        searchHistoryBtn.textContent = cityHistoryArr[i];
-        searchHistoryEl.appendChild(searchHistoryBtn);
-    }
+    if(cityHistoryStr) {
+        cityHistoryArr = cityHistoryStr.split(",");
+        console.log(cityHistoryArr);
+        // display btn for each saved search
+        for (let i = 0; i < cityHistoryArr.length; i++) {
+            var searchHistoryBtn = document.createElement("button");
+            searchHistoryBtn.textContent = cityHistoryArr[i];
+            searchHistoryBtn.classList = "btn";
+            searchHistoryEl.appendChild(searchHistoryBtn);
+        }
+    } else {};
 }
 
 // display fetched data
-var displayCityData = function(data) {
+var displayCityData = function(data, cityName) {
 // display current weather data
     // display weather data box
     weatherTodayEl.classList = "today-box";
 
     // display result title
-    cityName = cityNameEl.value.trim().toLowerCase();
+    if (!cityNameEl.value) {
+        cityName = cityName;
+        console.log(cityName)
+    } else {
+        cityName = cityNameEl.value.trim().toLowerCase()
+    }
         resultTitleEl.textContent = cityName + " " + moment().format("L") + " ";
     var icon = data["current"]["weather"][0].icon;
         todayIconEl.setAttribute("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png");
@@ -85,7 +93,6 @@ var displayCityData = function(data) {
     for (let i = 0; i < fiveDays.length; i++) {
        var day = document.createElement("div");
             day.classList = "forecast-card";
-            day.textContent = "day";
             fiveDayForecastEl.appendChild(day);
             //card title 
         var date = document.createElement("h5");
@@ -119,7 +126,7 @@ var getCityData = function(lat, long) {
         if(response.ok) {
             response.json().then(function(data){
                 console.log(data);
-                displayCityData(data);
+                displayCityData(data, cityName);
             });
         };
     });
@@ -127,9 +134,12 @@ var getCityData = function(lat, long) {
 
 // save search button
 var saveSearch = function(cityName) {
+    // create button
     var searchHistoryBtn = document.createElement("button");
-    searchHistoryBtn.textContent = cityName;
-    searchHistoryEl.appendChild(searchHistoryBtn);
+        searchHistoryBtn.textContent = cityName;
+        searchHistoryBtn.classList = "btn";
+        searchHistoryEl.appendChild(searchHistoryBtn);
+    // store in local storage
     localStorage.getItem("city");
     cityHistoryArr.push(cityName);
     console.log(cityHistoryArr);
@@ -140,6 +150,7 @@ var saveSearch = function(cityName) {
 var getHistoryData = function() {
     console.log(event.target.textContent)
     cityName = event.target.textContent
+
     var geocodeUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=f92fdda14af7b15ad0ec974e795f4725";
     fetch(geocodeUrl).then(function(response) {
         if(response.ok) {
@@ -174,6 +185,7 @@ var searchCity = function() {
     .catch(function (error) {
         alert('Unable to connect to GitHub');
       });
+    cityNameEl.value = "";
 }
 
 
