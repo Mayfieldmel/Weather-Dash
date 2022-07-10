@@ -128,10 +128,14 @@ var getCityData = function(lat, long) {
                 console.log(data);
                 displayCityData(data, cityName);
             });
-        };
-    });
-};
-
+        } else {
+            alert('Error: ' + response.statusText);
+          }
+        })
+        .catch(function (error) {
+          alert('Unable to connect to GitHub');
+        });
+    };
 // save search button
 var saveSearch = function(cityName) {
     // create button
@@ -158,7 +162,9 @@ var getHistoryData = function() {
                 console.log(data)
                 getCityData(data[0]["lat"], data[0]["lon"]);
             })
-        } 
+        } else {
+            alert('Error: ' + response.statusText);
+        }
     })
     .catch(function (error) {
         alert('Unable to connect to GitHub');
