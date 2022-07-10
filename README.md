@@ -2,7 +2,7 @@
 
 This repo houses the assets used to build the Weather Dash, available at https://mayfieldmel.github.io/Weather-Dash/ .
 
-![weather-dashboard](./assets/images/weather-dash.html)
+![weather-dashboard] (./assets/images/weather-dash.html)
 
 ## The Dashboard
 
