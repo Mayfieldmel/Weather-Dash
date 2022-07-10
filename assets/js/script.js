@@ -24,13 +24,12 @@ var displaySavedBtns = function() {
     var cityHistoryStr = localStorage.getItem("city");
     cityHistoryArr = cityHistoryStr.split(",");
     console.log(cityHistoryArr);
+    // display btn for each saved search
     for (let i = 0; i < cityHistoryArr.length; i++) {
         var searchHistoryBtn = document.createElement("button");
         searchHistoryBtn.textContent = cityHistoryArr[i];
         searchHistoryEl.appendChild(searchHistoryBtn);
-        
     }
-
 }
 
 // display fetched data
