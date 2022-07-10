@@ -133,7 +133,7 @@ var getCityData = function(lat, long) {
           }
         })
         .catch(function (error) {
-          alert('Unable to connect to GitHub');
+          alert('Unable to connect to openweathermap.org');
         });
     };
 // save search button
@@ -167,7 +167,7 @@ var getHistoryData = function() {
         }
     })
     .catch(function (error) {
-        alert('Unable to connect to GitHub');
+        alert('Unable to connect to openweathermap.org');
       });
 }
 
@@ -189,7 +189,7 @@ var searchCity = function() {
           }
     })
     .catch(function (error) {
-        alert('Unable to connect to GitHub');
+        alert('Unable to connect to openweathermap.org');
       });
     cityNameEl.value = "";
 }
