@@ -50,7 +50,7 @@ var displayCityData = function(data, cityName) {
     }
         resultTitleEl.textContent = cityName + " " + moment().format("L") + " ";
     var icon = data["current"]["weather"][0].icon;
-        todayIconEl.setAttribute("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png");
+        todayIconEl.setAttribute("src", "https://openweathermap.org/img/wn/" + icon + "@2x.png");
         todayIconEl.classList = "icon";
     
     // display current weather
@@ -106,7 +106,7 @@ var displayCityData = function(data, cityName) {
             fiveDayIcon.classList = "icon"
             fiveDayIconBox.appendChild(fiveDayIcon);
             var icon5 = fiveDays[i]["weather"][0].icon;
-            fiveDayIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + icon5 + "@2x.png");
+            fiveDayIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + icon5 + "@2x.png");
         var temp = document.createElement("p");
             temp.textContent = "Temp: " + fiveDays[i]["temp"]["day"] + " °F";
             day.appendChild(temp);
@@ -155,7 +155,7 @@ var getHistoryData = function() {
     console.log(event.target.textContent)
     cityName = event.target.textContent
 
-    var geocodeUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=f92fdda14af7b15ad0ec974e795f4725";
+    var geocodeUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=f92fdda14af7b15ad0ec974e795f4725";
     fetch(geocodeUrl).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
@@ -176,7 +176,7 @@ var searchCity = function() {
     event.preventDefault();
     cityName = cityNameEl.value.trim().toLowerCase();
     console.log(cityName);
-    var geocodeUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=f92fdda14af7b15ad0ec974e795f4725";
+    var geocodeUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=f92fdda14af7b15ad0ec974e795f4725";
     fetch(geocodeUrl).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
@@ -191,6 +191,7 @@ var searchCity = function() {
     .catch(function (error) {
         alert('Unable to connect to openweathermap.org');
       });
+
     cityNameEl.value = "";
 }
 
